@@ -108,8 +108,10 @@ print("\nRelatório de Performance (Precisão e Recall):")
 print(classification_report(y_test_cat, y_pred_cat, target_names=['Barata', 'Cara']))
 
 plt.figure(figsize=(6, 4))
-sns.heatmap(confusion_matrix(y_test_cat, y_pred_cat), annot=True, fmt='d', cmap='Greens')
+sns.heatmap(confusion_matrix(y_test_cat, y_pred_cat), annot=True, fmt='d', cmap='Greens', xticklabels=['Barata', 'Cara'], yticklabels=['Barata', 'Cara'])
 plt.title('Matriz de Confusão')
+plt.ylabel('Realidade', fontweight='bold')
+plt.xlabel('Previsão', fontweight='bold')
 plt.show()
 
 # 2. Testar diferentes divisões (Split Ratios)
